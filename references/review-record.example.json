@@ -1,0 +1,40 @@
+{
+  "experiment_id": "SYNTHETIC-EXAMPLE-001",
+  "hypothesis_id": "HIDDEN-STATE-EXAMPLE",
+  "source_commit": "synthetic_fixture_not_a_github_commit",
+  "competing_hypotheses": ["H0_same_future", "H1_distinct_future"],
+  "predictions_before_run": {
+    "H0_same_future": "Both test prefixes produce the same response to probe.",
+    "H1_distinct_future": "The prefixes produce different responses to probe."
+  },
+  "predictions_frozen_before_run": true,
+  "query": {
+    "mode": "model_learning",
+    "replay_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "suffix": [{"action": "synthetic_probe"}]
+  },
+  "gates": {
+    "G1": "PASS",
+    "G2": "PASS",
+    "G3": "PASS",
+    "G4": "NOT_APPLICABLE",
+    "G5": "NOT_TESTED",
+    "G6": "NOT_TESTED"
+  },
+  "outcome": {
+    "classification": "unknown",
+    "evidence_refs": [],
+    "note": "Illustrative schema only; no experiment or evidence was actually produced."
+  },
+  "model_update": {
+    "approved": false,
+    "previous_version": "synthetic-v1",
+    "new_version": "synthetic-v1",
+    "witness_ref": null
+  },
+  "next_query_reason": "Gather a valid observation before deciding whether to refine the model.",
+  "conclusion_scope": "hypothesis-only",
+  "target_premises": {"illustrative_deployment_premise": false},
+  "claimed_algorithm_effect": false,
+  "treatment_activated": false
+}
