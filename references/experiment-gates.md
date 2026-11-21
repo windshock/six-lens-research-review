@@ -39,6 +39,9 @@
 | **G4** 실행 알고리즘 | feedback mode 분기, corpus 등록, 유효 부모 선택, candidate→reward→선택→child 실행 | 모드 성능 비교 `invalid` 또는 신호원 0이라면 `effect_not_identifiable` |
 | **G5** 독립 반복/인과 | 자기대조·교란 통제·비용, 독립 seed/worker, hold-out, 전처리와 분석 사전등록 | 우월성 주장 보류, 탐색 기록은 기술통계만 가능 |
 | **G6** 지식 갱신 | G1–G3·필요 시 G4–G5 및 검증된 구별 증거, 이전 모델/수정 이유 기록 | 자동 모델 분할/새 결함 확정 금지 |
+| **G7** 주장-산출물 대조 | 커밋/문서가 "X를 갱신/완료"라고 주장하면 **X가 실제 커밋 산출물(diff·파일·내용)에 존재**하는지 대조. 주장한 _각 문서_가 diff-stat에 있는지·바이너리/zip 재빌드가 소스 편집을 가리지 않는지 | `claim_vs_artifact_mismatch`; 서사만으로 결과·완료 승인 금지 |
+
+**G5 독립 재현(표준 단계)**: 모든 실질 리뷰는 커밋된 산출물 최소 1개를 검토자가 직접 재현/대조한다(픽스처 재실행·소스 diff·sha/바이트 일치·외부 출처 해시 확인). 재현 불가 시 "산출물 기준 미검증"으로 G5 보류.
 
 G4는 **계층적으로 세분화**하라: `algorithm_ran` / `source_reachable` / `signal_observed` / `candidate_admitted` / `bonus_applied` / `parent_selected` / `valid_child_executed`. `candidate=0`인 실험은 충분히 정상적인 *negative control*일 수 있으나, 해당 bonus의 효과는 식별되지 않는다. 그 경우 `G4 algorithm_ran=PASS`, `treatment_activation=NOT_APPLICABLE/NO_EXPOSURE`를 같이 기재한다.
 
